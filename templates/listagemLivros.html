@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <title>listagem de livros</title>
+</head>
+<h1>lista de livros</h1>
+<body>
+    <form action="listagemLivros" method="post">
+        <input type="text" name="pesquisa">
+        <button type="submit">pesquisar</button>
+    </form>
+    <a href="/biblioteca"> <button>voltar</button></a>
+    <br>
+    <table border >
+        <tr style="border = 1px">
+            <td>nome</td>
+            <td>autor</td>
+            <td>editora</td>
+            <td>codigo</td>
+            <td>id</td>
+            <td>condicao</td>
+            <td>emprestimo/devolução</td>
+        </tr>
+        {%if livros == False %}
+            <p>livros não encontrados</p>
+        {%else%}
+            {% for livro in livros %}
+                <tr>
+                    <td>{{livro[2]}}</td>
+                    <td>{{livro[5]}}</td>
+                    <td>{{livro[6]}}</td>
+                    <td>{{livro[1]}}</td>
+                    <td>{{livro[0]}}</td>
+                    {%if livro[3] == 1 %}
+                        <td>disponivel</td>
+                        <td> <a href="/emprestimo/{{livro[0]}}">emprestimo</a> </td>
+                    {%else%}
+                        <td>indisponivel</td>
+                        <td> <a href="/devolucao/{{livro[0]}}">devolução</a> </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+</body>
+</html>

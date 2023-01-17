@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{escolha}}</title>
+</head>
+<body>
+    <form action="emprestimo" method="post">
+        <p>nome:{{livro[2]}} </p>
+
+        <p>autor:{{livro[5]}}</p>
+
+        <p>editora:{{livro[6]}}</p>
+
+        <p>codigo:{{livro[1]}}</p>
+
+        <p>id do livro</p>
+        <input type="text" name="id" value={{livro[0]}}>
+
+        <p> cpf para o emprestimo </p>
+        <input type="text" name="cpf">
+
+        <p> senha para o emprestimo </p>
+        <input type="text" name="senha">
+        <br>
+        <button name="emprestar" type="submit">{{escolha}}</button>
+    </form>
+</body>
+</html>

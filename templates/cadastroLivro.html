@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <title>cadastro de livro</title>
+</head>
+<body>
+    <h1>cadastro de livro</h1>
+    <a href="/biblioteca"><button>voltar</button></a>
+    <form action="cadastroLivro" method="POST">
+
+        <p>nome</p>
+        <input type="text" name="nome">
+
+        <p>autor</p>
+        <input type="text" name="autor">
+
+        <p>editora</p>
+        <input type="text" name="editora">
+
+        <p>codigo do livro</p>
+        <input type="text" name="codigo">
+
+        <p>tempo de imprestimo em dias</p>
+        <input type="text" name="tempo">
+
+        <button type="submit" name="cadastro">cadastrar</button>
+    </form>
+    <p>{{saida}}</p>
+</body>
+</html>

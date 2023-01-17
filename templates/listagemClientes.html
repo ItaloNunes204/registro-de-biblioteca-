@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>listagem Clientes</title>
+</head>
+<body>
+    <h1>lista de clientes</h1>
+    <a href="/biblioteca"> <button>voltar</button></a>
+    <form action="listagemCliente" method="post">
+        <input type="text" name="pesquisa">
+        <button type="submit">pesquisar</button>
+    </form>
+    <p>{{mensagem}}</p>
+    <table border>
+        <tr style="border = 1px">
+            <td>nome</td>
+            <td>cpf</td>
+            <td>id</td>
+            <td>situacao</td>
+            <td>penalidade</td>
+            <td>remover Penalidade</td>
+        </tr>
+        {%if clientes == False %}
+            <p>cliente não encontrados</p>
+        {%else%}
+            {% for cliente in clientes %}
+                <tr>
+                    <td>{{cliente[0]}}</td>
+                    <td>{{cliente[1]}}</td>
+                    <td>{{cliente[6]}}</td>
+
+                    {%if cliente[8] == 1 %}
+                        <td>disponivel</td>
+                    {%else%}
+                        <td>indisponivel</td>
+                    {% endif %}
+
+                    {%if cliente[2] == None %}
+                        <td> sem penalização</td>
+                        <td> sem penalidade</td>
+                    {%else%}
+                        <td> usuario com penalidade </td>
+                        <td> <a href="/retiraPenalidade/{{cliente[6]}}"> perduar Penalidade </a> </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+</body>
+</html>
