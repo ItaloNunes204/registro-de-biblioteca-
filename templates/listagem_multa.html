@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2; /* Cor para o cabeçalho */
+        }
+
+        tr:nth-child(odd) {
+            background-color: white; /* Linhas ímpares: branco */
+        }
+
+        tr:nth-child(even) {
+            background-color: #add8e6; /* Linhas pares: azul claro */
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>id_multa</th>
+                <th>id_cliente</th>
+                <th>valor</th>
+                <th>status</th>
+                <th>data_geracao</th>
+                <th>data_pagamento</th>
+                <th>devolver</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for multa in multas %}
+                <tr>
+                    <th>{{multa.id_multa}}</th>
+                    <th>{{multa.id_cliente}}</th>
+                    <th>{{multa.valor}}</th>
+                    <th>{{multa.status}}</th>
+                    <th>{{multa.data_geracao}}</th>
+                    <th>{{multa.data_pagamento}}</th>
+                    <th><a href="/pagar_multa/{{multa.id_multa}}"><button>Pagar</button></a></th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

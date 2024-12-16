@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="emprestimo" method="post">
+        <h2>dados livros</h2>
+        <p>livro:{{livro.titulo}}</p>
+        <p>autor:{{livro.autor}}</p>
+        <p>quantidade: {{livro.quantidade_disponivel}}</p>
+        <p>-------------------------------</p>
+        <p>id_livro</p>
+        <input type="text" name="id_livro" id="id_livro" value="{{livro.id_livro}}" >
+        <p>email</p>
+        <input type="text" name="email" id="email" >
+        <p>senha</p>
+        <input type="password" name="senha" id="senha" >
+        <button type="submit">emprestar</button>
+    </form>
+</body>
+</html>

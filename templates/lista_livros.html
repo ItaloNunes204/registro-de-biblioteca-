@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2; /* Cor para o cabeçalho */
+        }
+
+        tr:nth-child(odd) {
+            background-color: white; /* Linhas ímpares: branco */
+        }
+
+        tr:nth-child(even) {
+            background-color: #add8e6; /* Linhas pares: azul claro */
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>id_livro</th>
+                <th>titulo</th>
+                <th>autor</th>
+                <th>editora</th>
+                <th>ano_publicacao</th>
+                <th>isbn</th>
+                <th>genero</th>
+                <th>quantidade_total</th>
+                <th>quantidade_disponivel</th>
+                <th>emprestimo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for livro in livros %}
+                <tr>
+                    <th>{{livro.id_livro}}</th>
+                    <th>{{livro.titulo}}</th>
+                    <th>{{livro.autor}}</th>
+                    <th>{{livro.editora}}</th>
+                    <th>{{livro.ano_publicacao}}</th>
+                    <th>{{livro.isbn}}</th>
+                    <th>{{livro.genero}}</th>
+                    <th>{{livro.quantidade_total}}</th>
+                    <th>{{livro.quantidade_disponivel}}</th>
+                    <th><a href="/emprestimo/{{livro.id_livro}}"><button>emprestimo</button></a></th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

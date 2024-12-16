@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="pagar_multa" method="post">
+        <p>id_multa: {{multa.id_multa}}</p>
+        <p>valor: {{multa.valor}}</p>
+        <p>saldo: {{cliente.saldo}}</p>
+        <input type="text" name="id_multas" id="id_multas" value="{{multa.id_multa}}">
+        <button type="submit">pagar</button>
+    </form>
+</body>
+</html>

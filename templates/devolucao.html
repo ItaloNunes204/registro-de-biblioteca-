@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="devolucao" method="post">
+        <p>id_emprestimo:{{emprestimo.id_emprestimo}}</p>
+        <p>data_emprestimo:{{emprestimo.data_emprestimo}}</p>
+        <p>email:{{emprestimo.email_cliente}}</p>
+        <input type="text" id="id_emprestimo" name="id_emprestimo" value="{{emprestimo.id_emprestimo}}">
+        <button>devolver</button>
+    </form>
+</body>
+</html>

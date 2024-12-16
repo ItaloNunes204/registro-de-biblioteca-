@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2; /* Cor para o cabeçalho */
+        }
+
+        tr:nth-child(odd) {
+            background-color: white; /* Linhas ímpares: branco */
+        }
+
+        tr:nth-child(even) {
+            background-color: #add8e6; /* Linhas pares: azul claro */
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>id_emprestimo</th>
+                <th>id_livro</th>
+                <th>email_cliente</th>
+                <th>data_emprestimo</th>
+                <th>data_devolução</th>
+                <th>status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emprestimo in emprestimos %}
+                <tr>
+                    <th>{{emprestimo.id_emprestimo}}</th>
+                    <th>{{emprestimo.id_livro}}</th>
+                    <th>{{emprestimo.email_cliente}}</th>
+                    <th>{{emprestimo.data_emprestimo}}</th>
+                    <th>{{emprestimo.data_devolução}}</th>
+                    <th>{{emprestimo.status}}</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
